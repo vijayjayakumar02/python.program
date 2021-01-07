@@ -75,11 +75,27 @@ class linkedList:
             itr = itr.next
             count += 1
 
+    def remove_duplicate(self):
+        temp = self.head
+        if temp is None:
+            return
+        while temp.next is not None:
+            if temp.data == temp.next.data:
+                new = temp.next.next
+                temp.next = None
+                temp.next = new
+            else:
+                temp = temp.next
+        return self.head
+
 
 ll = linkedList()
-ll.insert_at_beginning(56)
-ll.insert_at_beginning(89)
-ll.insert_at_end(96)
-ll.remove_at(0)
-ll.insert_at(0, 2)
+ll.insert_at_beginning(20)
+ll.insert_at_beginning(13)
+ll.insert_at_beginning(13)
+ll.insert_at_beginning(11)
+ll.insert_at_beginning(11)
+ll.insert_at_beginning(11)
+ll.insert_at_beginning(11)
+ll.remove_duplicate()
 ll.print()
