@@ -3,7 +3,7 @@ from collections import deque
 
 class stack:
     def __init__(self):
-        self.container =deque()
+        self.container = deque()
 
     def push(self, data):
         self.container.append(data)
